@@ -1,0 +1,49 @@
+{
+  "name": "handwritten-highlights",
+  "version": "0.1.0",
+  "description": "Beautiful & animated text highliter for your Next/React project. Enhance your text with colorful visuals and animations that resembles real writing.",
+  "main": "build/index.js",
+  "module": "build/index.mjs",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@types/react": "^19.1.9",
+    "microbundle": "^0.15.1",
+    "react": "^19.1.1",
+    "rollup": "^4.46.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harasuke/handwritten-highlights.git"
+  },
+  "keywords": [
+    "highlight",
+    "highlighter",
+    "handwrite",
+    "handwritten",
+    "beautiful",
+    "text",
+    "svg",
+    "visuals"
+  ],
+  "author": "Mirko Spinato",
+  "license": "MIT"
+}
