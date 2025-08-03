@@ -1,6 +1,6 @@
 {
   "name": "handwritten-highlights",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Beautiful & animated text highliter for your Next/React project. Enhance your text with colorful visuals and animations that resembles real writing.",
   "main": "build/index.js",
   "module": "build/index.mjs",

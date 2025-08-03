@@ -7,9 +7,11 @@
 
 ---
 
-## Prerequisites
+![handwritten-highlights_preview](https://github.com/user-attachments/assets/9e57185d-ab37-44ed-98de-3f2d899c739c)
 
-This library requires **Node.js (>=14)** and **React 17+**, and is compatible with React 17, 18, and 19.
+## Requirements
+
+This library works with **React 17+** and NextJS.  
 Tested and working on Next 15.4
 
 ## Installation
@@ -18,10 +20,10 @@ Tested and working on Next 15.4
 npm install handwritten-highlights
 ```
 
-## First wrap your app with the provider
+## First, wrap your app with the provider
 
 
-```
+```jsx
   import { HighlightProvider } from "handwritten-highlights";
   ...
 
@@ -31,26 +33,49 @@ npm install handwritten-highlights
 ```
 
 ## Then apply the Highlights
-```
+```jsx
 import { HighlightMarker, HighlightUnderline } from "handwritten-highlights";
 ...
-return (
-  <>
-    ...
-    <p>
-      <HighlightMarker>Lorem ipsum</HighlightMarker>, dolor sit amet consectetur
-      adipisicing elit. Commodi eos temporibus, adipisci facilis qui cumque, reiciendis saepe mollitia ratione optio officia illum earum fugiat fugit distinctio!
-      Repellat, porro adipisci magni accusantium nemo fugiat minus libero eos
-      quis, numquam excepturi molestias error consequatur tempore? Corrupti at eum
-      nemo, rem nulla facilis!
-    </p>
-  </>
-)
+function YourComponent() {
+  
+  return (
+    <>
+      ...
+      <p>
+        <HighlightMarker>Lorem ipsum</HighlightMarker>, dolor
+        sit amet consectetur adipisicing elit. Commodi eos temporibus,
+        adipisci facilis qui cumque, reiciendis saepe mollitia ratione
+        optio officia illum earum fugiat fugit distinctio! Repellat,
+        porro adipisci magni accusantium nemo fugiat minus libero eos
+        quis, numquam excepturi molestias error consequatur tempore?
+        Corrupti at eum nemo, rem nulla facilis!
+      </p>
+    </>
+  )
+}
+```
+
+## What styles are available?
+
+Currently there are 2 available styles:
+  - Marker style
+  - Underline style  
+
+You can use them respectively as follows:
+```jsx
+import { HighlightMarker } from "handwritten-highlights"
+
+<HighlightMarker>...some text...</HighlightMarker>
+```
+```jsx
+import { HighlightUnderline } from "handwritten-highlights"
+
+<HighlightUnderline>...some text...</HighlightUnderline>
 ```
 
 ## Configure the highlight the way you prefer
-By default no animation is displayed but they are easy to enable
-```
+By default no animation is displayed but they are easy to enable and configure
+```jsx
 <HighlightMarker
   animationEffect="ease-out"
   animationOffset={500}
@@ -61,27 +86,32 @@ By default no animation is displayed but they are easy to enable
 </HighlightMarker>
 ```
 #### animationEffect
-"None" by default but these are available:  
->"ease" | "ease-in" | "ease-out" | "ease-in-out"
-
-To make animation effective, other parameters are required which are:
-
-#### animationOffset
-Expressed in milliseconds. 0 by default
-
-#### animationDuration
-Expressed in milliseconds. 0 by default
-
-#### highlightColor
-Expressed as a CSS color.  
-rgb() / rgba() / hsla() / hex.  
-
-example:
+```jsx
+"ease" | "ease-in" | "ease-out" | "ease-in-out"
 ```
-hsla(288, 60%, 50%, 0.30)
+"None" is set by default.
+If you specify an animation, to make it effective, other parameters are required which are:
+
+```jsx
+animationOffset:{number}  // 0 by default. Expressed in milliseconds
+
+animationDuration:{number}  // 0 by default. Expressed in milliseconds
 ```
 
-### License
-See the License file.
+You can also change the color for each effect
+```jsx
+highlightColor:{CSS Color string} // Only rgb() , rgba() , hsla(), hex are supported
+```
+
+## There are some effect variants available
+```jsx
+highlightVariant: {string} // 1, 2, random
+```
+Currently there are only 2 for both Marker and Underline.  
+If set to "random", every time the page is reloaded, the effect variant to use changes. 
 
 ### ... More effect variants coming soon!
+  
+
+### License
+See the LICENSE file.
